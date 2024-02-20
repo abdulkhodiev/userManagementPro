@@ -11,6 +11,7 @@ export default defineConfig({
                 "react-dom",
                 "react-router-dom",
                 "bootstrap/dist/css/bootstrap.min.css",
+                "axios",
             ],
         },
     },
