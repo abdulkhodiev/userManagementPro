@@ -20,7 +20,7 @@ const Toolbar = ({ selectedRows, fetchData, setSelectedRows }) => {
             }
 
             const response = await axios.delete(
-                "http://localhost:3000/api/control/",
+                "https://usermanagementpro.onrender.com/api/control/",
                 {
                     headers: {
                         "auth-token": token,
@@ -62,7 +62,7 @@ const Toolbar = ({ selectedRows, fetchData, setSelectedRows }) => {
             }
 
             await axios.put(
-                "http://localhost:3000/api/control",
+                "https://usermanagementpro.onrender.com/api/control",
                 {
                     userIds: selectedRows,
                     action: action,

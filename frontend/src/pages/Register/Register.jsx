@@ -15,7 +15,7 @@ const Register = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:3000/api/user/register",
+                "https://usermanagementpro.onrender.com/api/user/register",
                 {
                     name,
                     email,

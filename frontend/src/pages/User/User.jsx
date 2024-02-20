@@ -21,7 +21,7 @@ const User = () => {
             }
 
             const response = await axios.get(
-                "http://localhost:3000/api/control",
+                "https://usermanagementpro.onrender.com/api/control",
                 {
                     headers: {
                         "auth-token": token,
