@@ -21,14 +21,14 @@ mongoose
 
 app.use(express.json());
 
-app.use(
-    cors({
-        origin: "https://https://main--illustrious-nasturtium-7016c4.netlify.app",
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-        credentials: true,
-        optionsSuccessStatus: 204,
-    })
-);
+app.use(function (request, response, next) {
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+});
 
 app.use("/api/user", authRoute);
 app.use("/api/control", userRoute);
