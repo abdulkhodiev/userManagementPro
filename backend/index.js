@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const mongooose = require("mongoose");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth.js");
 const userRoute = require("./routes/user.js");
@@ -8,7 +8,7 @@ const cors = require("cors");
 
 dotenv.config();
 
-mongooose
+mongoose
     .connect(process.env.DB_CONNECT, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -18,20 +18,21 @@ mongooose
         console.log(err);
         process.exit(1);
     });
+
 app.use(express.json());
 
-app.use(cors());
-
-const corsOptions = {
-    origin: "http://localhost:5173",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
+app.use(
+    cors({
+        origin: "https://65d58caa23e04954b16b0f17--illustrious-nasturtium-7016c4.netlify.app",
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        credentials: true,
+        optionsSuccessStatus: 204,
+    })
+);
 
 app.use("/api/user", authRoute);
 app.use("/api/control", userRoute);
 
-app.listen(3000, () => console.log("Server started on port 3000"));
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
