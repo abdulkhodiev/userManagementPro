@@ -1,9 +1,13 @@
 .user {
     min-height: 100vh;
-    background-image: url("../../assets/img/bgimg.jpg");
-    background-size: cover;
+    background-color: #000000;
+    background-image: linear-gradient(
+        225deg,
+        #000000 0%,
+        #1e00aa 50%,
+        #686868 100%
+    );
 }
-
 .userContainer {
     width: 90%;
     margin: auto;
