@@ -23,7 +23,7 @@ app.use(express.json());
 
 app.use(
     cors({
-        origin: "https://65d58caa23e04954b16b0f17--illustrious-nasturtium-7016c4.netlify.app",
+        origin: "https://https://main--illustrious-nasturtium-7016c4.netlify.app",
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
         optionsSuccessStatus: 204,
